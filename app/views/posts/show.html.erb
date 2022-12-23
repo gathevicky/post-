@@ -1,0 +1,15 @@
+<h2><%= @post.title %></h2>
+
+<div>
+  <%= @post.body %>
+</div>
+<br>
+<%= link_to "Edit post",edit_post_path(@post) %>
+<%= render "comments/form", comment: @comment%>
+
+<b>Comments</b>
+<br>
+<% @post.comments.each do |comment|%>
+  <%= comment.body%>
+  <br>
+<% end %>
